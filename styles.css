@@ -1,0 +1,60 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #4caf50;
+  color: white;
+  transform: scale(1.1);
+}
+
+#animateBox {
+  width: 100px;
+  height: 100px;
+  background: steelblue;
+  margin: 2rem auto;
+  transition: transform 0.5s ease;
+}
+
+.animate {
+  transform: rotate(360deg) scale(1.2);
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  background: white;
+  border: 2px solid #333;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#modal.show {
+  display: block;
+  opacity: 1;
+  animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, -100%);
+  }
+  to {
+    transform: translate(-50%, -30%);
+  }
+}
